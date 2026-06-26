@@ -4,15 +4,16 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class PaymentModel extends Model
+class FamilyMemberModel extends Model
 {
-    protected $table            = 'payments';
+    protected $table            = 'family_members';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
-    protected $allowedFields    = ['appointment_id', 'type', 'amount', 'payment_method', 'status', 'payment_date', 'bukti_transfer'];
-    
+    protected $protectFields    = true;
+    protected $allowedFields    = ['user_id', 'name', 'relation', 'date_of_birth', 'gender', 'blood_type', 'allergies', 'pre_existing_conditions'];
+
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
 
